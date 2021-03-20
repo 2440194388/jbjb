@@ -394,7 +394,6 @@ function getInfo(_0x3c9f71, _0x251fc0 = ![]) {
         }
     });
 }
-
 function receiveCash(_0x1e74d2) {
     var _0x1f0795 = {
         'JhaFn': function(_0x240744, _0x4ea8e4) {
@@ -768,6 +767,9 @@ function shareCodesFormat() {
         }
     };
     return new Promise(async _0x47f940 => {
+        let slee = Math.floor(Math.random() * 9000) 
+        console.log(`\n************获取互助码随机延时${slee}毫秒************\n`);
+        await $.wait(slee);
         $[_0x551f('159', 'oRQB')] = [];
         if ($['shareCodesArr'][_0x797e35['mDLlq']($[_0x551f('15a', 'hHKL')], 0x1)]) {
             $[_0x551f('15b', ')!aO')] = $[_0x551f('15c', '[i0*')][$[_0x551f('15d', 'wGg0')] - 0x1][_0x551f('15e', '[G7V')]('@');
@@ -778,7 +780,14 @@ function shareCodesFormat() {
         }
         const _0x59bbb8 = await _0x797e35[_0x551f('163', 'm2qs')](readShareCode);
         if (_0x59bbb8 && _0x59bbb8['code'] === 0xc8) {
-            $['newShareCodes'] = [...new Set([..._0x59bbb8[_0x551f('165', 'qXlN')] || []])];
+            // $['newShareCodes'] = [...new Set([..._0x59bbb8[_0x551f('165', 'qXlN')] || []])];
+            let inviteCodes = _0x59bbb8[_0x551f('165', 'qXlN')]
+            let length= inviteCodes.length;
+            while(length > 1){
+                let index = Math.floor(Math.random() * length--);
+                [inviteCodes[length], inviteCodes[index]] = [inviteCodes[index], inviteCodes[length]];
+            }//随机
+            $['newShareCodes'] = inviteCodes
         }
         console[_0x551f('7a', 'b7uC')]('第' + $[_0x551f('166', 'Gf[z')] + _0x551f('167', 'P&87') + JSON[_0x551f('168', 'aG7W')]($['newShareCodes']));
         _0x797e35[_0x551f('169', 'qXlN')](_0x47f940);
